@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* --- Tema Nocturno (grises) --- */
+.night-theme {
+  --bg: theme(colors.night.bg);
+  --panel: theme(colors.night.panel);
+  --border: theme(colors.night.border);
+  --text: theme(colors.night.text);
+  --accent: theme(colors.night.accent);
+}
+
+/* --- Tema Día (verde pastel + verde fuerte) --- */
+.day-theme {
+  --bg: theme(colors.day.bg);
+  --panel: theme(colors.day.panel);
+  --border: theme(colors.day.border);
+  --text: theme(colors.day.text);
+  --accent: theme(colors.day.accent);
+}
+

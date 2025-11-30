@@ -8,6 +8,7 @@ export default function Layout({ children }) {
         </p>
       </header>
       <main className="p-6 flex-1">{children}</main>
+      <div className={theme === "night" ? "night-theme" : "day-theme"}>{children}</div>
       <footer className="border-t border-slate-800 text-xs text-slate-500 text-center py-3">
         Hecho para pruebas y portafolio · by Natalia (+ un bot)
       </footer>

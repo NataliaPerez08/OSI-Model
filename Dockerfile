@@ -1,26 +1,14 @@
-# ---------- Etapa 1: Build ----------
-FROM node:20-alpine AS builder
+FROM node:20-alpine
 
 WORKDIR /app
 
 COPY package.json ./
-COPY vite.config.js ./
-COPY tailwind.config.js ./
-COPY postcss.config.js ./
-COPY index.html ./
+
+COPY package-lock.json ./
 
 RUN npm install --legacy-peer-deps
 
-COPY src ./src
-COPY public ./public
+EXPOSE 5173
 
-RUN npm run build
-
-# ---------- Etapa 2: Nginx ----------
-FROM nginx:stable-alpine
-
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+# Source code will be mounted as a volume at runtime
+CMD ["npm", "run", "dev"]

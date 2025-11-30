@@ -4,5 +4,6 @@ dist
 .gitignore
 .vscode
 .idea
-*.log
+npm-debug.log*
 Dockerfile
+Dockerfile.prod
